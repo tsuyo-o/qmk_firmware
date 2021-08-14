@@ -57,6 +57,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
       return 130;
     case JK_MOUSE:
       return 130;
+    case SFT_T(KC_Z):
+      return 300;
+    case SFT_T(KC_SLSH):
+      return 300;
     default:
       return TAPPING_TERM;
   }
