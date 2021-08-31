@@ -27,6 +27,7 @@
 //#define MASTER_RIGHT
 
 #define COMBO_COUNT 1
+#define COMBO_TERM 100
 
 #define MOUSEKEY_DELAY      0
 #define MOUSEKEY_MAX_SPEED  30

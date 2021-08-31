@@ -49,6 +49,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_OSL_TO_B] = ACTION_TAP_DANCE_DUAL_ROLE(OSL(BASE), BASE)
 };
 
+/*
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case TD(TD_ESC_TO_S):
@@ -65,6 +66,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
       return TAPPING_TERM;
   }
 }
+*/
 
 const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
 
