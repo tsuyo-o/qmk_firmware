@@ -21,7 +21,8 @@
 // #define ONESHOT_TIMEOUT 300
 #define TAPPING_TERM_PER_KEY
 
-// #define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
+#define RETRO_TAPPING
 
 #define MASTER_LEFT
 //#define MASTER_RIGHT
