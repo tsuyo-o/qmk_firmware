@@ -41,7 +41,29 @@
 #define SOFT_SERIAL_PIN D0
 
 #define USB_POLLING_INTERVAL_MS 1
-#define MASTER_RIGHT
+
+// place overrides here
+#define TAPPING_TERM 300
+// #define ONESHOT_TIMEOUT 300
+#define TAPPING_TERM_PER_KEY
+
+#define PERMISSIVE_HOLD
+#define RETRO_TAPPING
+
+#define MASTER_LEFT
+//#define MASTER_RIGHT
+
+#define COMBO_COUNT 1
+#define COMBO_TERM 100
+
+#define MOUSEKEY_DELAY      0
+#define MOUSEKEY_MAX_SPEED  40
+
+#define MOUSEKEY_WHEEL_DELAY 0
+#define MOUSEKEY_WHEEL_MAX_SPEED 20
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 10
+
+
 
 // RGB matrix support
 #ifdef RGB_MATRIX_ENABLE
