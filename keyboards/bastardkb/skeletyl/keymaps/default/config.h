@@ -50,8 +50,8 @@
 #define PERMISSIVE_HOLD
 #define RETRO_TAPPING
 
-//#define MASTER_LEFT
-#define MASTER_RIGHT
+#define MASTER_LEFT
+//#define MASTER_RIGHT
 
 #define COMBO_COUNT 1
 #define COMBO_TERM 100

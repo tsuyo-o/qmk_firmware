@@ -56,15 +56,6 @@
 #define COMBO_COUNT 1
 #define COMBO_TERM 100
 
-#define MOUSEKEY_DELAY      0
-#define MOUSEKEY_MAX_SPEED  40
-
-#define MOUSEKEY_WHEEL_DELAY 0
-#define MOUSEKEY_WHEEL_MAX_SPEED 20
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 10
-
-
-
 // RGB matrix support
 #ifdef RGB_MATRIX_ENABLE
 #    define SPLIT_TRANSPORT_MIRROR
