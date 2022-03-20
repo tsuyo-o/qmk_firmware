@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      SFT_T(KC_Z), KC_X, KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, SFT_T(KC_SLSH), 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_TAB,OSM(MOD_LGUI),LT(SYMB,KC_SPC),     LT(SYMB,KC_SPC), OSM(MOD_RGUI), KC_ESC
+                   LT(SYMB, KC_TAB), OSM(MOD_LGUI),LT(SYMB,KC_SPC),     LT(SYMB,KC_SPC), OSM(MOD_RGUI), LT(SYMB, KC_ESC)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,      KC_9,     KC_0,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BSPC, KC_CIRC, KC_MINS,   KC_PIPE, KC_TILD, KC_GRV
+                                          KC_MINS, KC_MINS, KC_GRV,    KC_TILD, KC_PIPE, KC_CIRC
                                       //`--------------------------'  `--------------------------'
   ),
 
