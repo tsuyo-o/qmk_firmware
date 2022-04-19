@@ -40,7 +40,7 @@
 
 #define SOFT_SERIAL_PIN D0
 
-#define MASTER_RIGHT
+//#define MASTER_RIGHT
 
 // RGB matrix support
 #ifdef RGB_MATRIX_ENABLE
