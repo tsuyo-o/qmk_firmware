@@ -22,17 +22,6 @@
 #define SYMB2 2
 #define MOUSE 3
 
-enum combos {
-  JK_MOUSE
-};
-
-
-
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
-  [JK_MOUSE] = COMBO_ACTION(jk_combo)
-};
-
 // Initialize variable holding the binary
 // representation of active modifiers.
 uint8_t mod_state;
@@ -110,23 +99,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       // Let QMK process the KC_J keycode as usual outside of ctrl key
       return true;
     }
+  case KC_COMM:
+    {
+      if (record->event.pressed) {
+        if (get_oneshot_mods() & MOD_MASK_GUI) {
+          del_oneshot_mods(MOD_MASK_GUI);
+          layer_on(MOUSE);
+          return false;
+        }
+        // for general mods
+        else if (mod_state & MOD_MASK_GUI) {
+          del_mods(MOD_MASK_GUI);
+          layer_on(MOUSE);
+          set_mods(mod_state);
+          return false;
+        }
+      } // Let QMK process the KC_COMM keycode as usual outside of ctrl key
+      return true;
+    }
+
   }
   return true;
 };
 
-
-/*
-https://www.reddit.com/r/olkb/comments/ccptk9/i_need_to_activate_a_temp_layer_with_ctrlalt/
-*/
-void process_combo_event(uint16_t combo_index, bool pressed) {
-    switch(combo_index) {
-        case JK_MOUSE:
-            if (pressed) {
-                layer_on(MOUSE);
-            }
-            break;
-    }
-}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
