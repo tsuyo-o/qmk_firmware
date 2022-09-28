@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,XXXXXXX, LGUI(KC_V), LGUI(KC_C),KC_BTN1,KC_BTN2
+                                          XXXXXXX,KC_BTN1, LGUI(KC_V), LGUI(KC_C),KC_BTN1,KC_BTN2
                                       //`--------------------------'  `--------------------------'
   )
 };

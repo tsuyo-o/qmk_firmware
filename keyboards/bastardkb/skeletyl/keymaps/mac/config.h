@@ -16,29 +16,15 @@
  */
 
 #pragma once
-#include "config_common.h"
 #define VENDOR_ID 0xA8F8
 #define PRODUCT_ID 0x1830
-#define DEVICE_VER 0x0001
 #define MANUFACTURER Bastard Keyboards
-#define PRODUCT Skeletyl
 
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 5
 #define RGBLIGHT_LIMIT_VAL 180
-#define MATRIX_ROW_PINS { B5, F7, F6, B6 }
-#define MATRIX_COL_PINS { E6, C6, B1, B3, B2 }
 
 #define DIODE_DIRECTION ROW2COL
 
-#define RGB_DI_PIN D2
-#define RGBLED_NUM 36
-#define RGBLED_SPLIT { 18, 18 }
 #define RGBLIGHT_ANIMATIONS
-
-#define DEBOUNCE 5
-
-#define SOFT_SERIAL_PIN D0
 
 #define USB_POLLING_INTERVAL_MS 1
 
@@ -50,19 +36,20 @@
 #define PERMISSIVE_HOLD
 #define RETRO_TAPPING
 
-//#define MASTER_LEFT
-#define MASTER_RIGHT
+// https://github.com/qmk/qmk_firmware/blob/master/docs/getting_started_introduction.md
+//#define MASTER_RIGHT
 
 #define COMBO_COUNT 1
 #define COMBO_TERM 100
 
-#define MOUSEKEY_DELAY      3
-#define MOUSEKEY_MAX_SPEED  10
-#define MOUSEKEY_TIME_TO_MAX 60
-
-#define MOUSEKEY_WHEEL_DELAY 0
-#define MOUSEKEY_WHEEL_MAX_SPEED 20
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 20
+#define MK_KINETIC_SPEED
+//#define MOUSEKEY_DELAY      3
+//#define MOUSEKEY_MAX_SPEED 10
+//#define MOUSEKEY_TIME_TO_MAX 60
+//
+//#define MOUSEKEY_WHEEL_DELAY 3
+//#define MOUSEKEY_WHEEL_MAX_SPEED 20
+//#define MOUSEKEY_WHEEL_TIME_TO_MAX 20
 
 
 

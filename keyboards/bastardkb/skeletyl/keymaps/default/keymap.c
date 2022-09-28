@@ -122,6 +122,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT_split_3x5_3(
@@ -169,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,XXXXXXX, RCTL(KC_V), RCTL(KC_C),KC_BTN1,KC_BTN2
+                                          XXXXXXX,KC_BTN1, RCTL(KC_V), RCTL(KC_C),KC_BTN1,KC_BTN2
                                       //`--------------------------'  `--------------------------'
   )
 };
