@@ -15,6 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+/* this is for mac */
+
 #pragma once
 #define VENDOR_ID 0xA8F8
 #define PRODUCT_ID 0x1830
@@ -43,6 +46,7 @@
 #define COMBO_TERM 100
 
 #define MK_KINETIC_SPEED
+#define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 8
 //#define MOUSEKEY_DELAY      3
 //#define MOUSEKEY_MAX_SPEED 10
 //#define MOUSEKEY_TIME_TO_MAX 60
