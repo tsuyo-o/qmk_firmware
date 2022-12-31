@@ -22,6 +22,20 @@
 #define SYMB2 2
 #define MOUSE 3
 
+// https://www.reddit.com/r/MechanicalKeyboards/comments/mrnxrj/better_super_alttab/
+bool is_alt_tab_active = false;
+enum custom_keycodes {          // Make sure have the awesome keycode ready
+  ALT_TAB = SAFE_RANGE,
+};
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    if (is_alt_tab_active) {
+        unregister_code(KC_LCTL);
+        is_alt_tab_active = false;
+    }
+    return state;
+}
+
 // Initialize variable holding the binary
 // representation of active modifiers.
 uint8_t mod_state;
@@ -29,6 +43,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // Store the current modifier state in the variable for later reference
   mod_state = get_mods();
   switch (keycode) {
+
+  case ALT_TAB: // super alt tab macro
+    {
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+            is_alt_tab_active = true;
+            register_code(KC_LCTL);
+        }
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      return true;
+    }
 
   case KC_J:
     {
@@ -152,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYMB2] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, ALT_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
