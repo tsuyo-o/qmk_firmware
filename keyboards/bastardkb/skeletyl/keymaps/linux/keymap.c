@@ -145,6 +145,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } // Let QMK process the KC_COMM keycode as usual outside of ctrl key
       return true;
     }
+  case KC_U:
+    {
+      static bool esckey_registered;
+      if (record->event.pressed) {
+        if (get_oneshot_mods() & MOD_MASK_CTRL) {
+          del_oneshot_mods(MOD_MASK_CTRL);
+          register_code(KC_ESC);
+          esckey_registered = true;
+          //register_mods(MOD_MASK_CTRL);
+          return false;
+        }
+        // for general mods
+        else if (mod_state & MOD_MASK_CTRL) {
+          del_mods(MOD_MASK_CTRL);
+          register_code(KC_ESC);
+          esckey_registered = true;
+          set_mods(mod_state);
+          return false;
+        }
+      } else { // on release of KC_H
+        // In case KC_ENT is still being sent even after the release of KC_H
+        if (esckey_registered) {
+          unregister_code(KC_ESC);
+          esckey_registered = false;
+          return false;
+        }
+      }
+      // Let QMK process the KC_H keycode as usual outside of ctrl key
+      return true;
+    }
+
   }
   return true;
 };
@@ -161,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_T(KC_Z), KC_X, KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,LALT_T(KC_DOT), SFT_T(KC_SLSH), 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                         LT(SYMB, KC_TAB), OSM(MOD_LCTL), LT(SYMB,KC_SPC),     LT(SYMB,KC_SPC), OSM(MOD_RCTL), LT(SYMB,KC_ESC) 
+                         LT(SYMB,KC_SPC), OSM(MOD_LCTL), XXXXXXX,   XXXXXXX, OSM(MOD_RCTL),LT(SYMB,KC_SPC)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -174,13 +205,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,      KC_9,     KC_0,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_MINS, KC_MINS, KC_GRV,    KC_TILD, KC_PIPE, KC_CIRC
+                                           KC_MINS, KC_GRV, XXXXXXX,   XXXXXXX, KC_TILD, KC_PIPE
                                       //`--------------------------'  `--------------------------'
   ),
 
   [SYMB2] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, ALT_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CIRC, ALT_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|

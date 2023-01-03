@@ -18,7 +18,6 @@
 #pragma once
 #define VENDOR_ID 0xA8F8
 #define PRODUCT_ID 0x1830
-#define MANUFACTURER Bastard Keyboards
 
 #define RGBLIGHT_LIMIT_VAL 180
 
