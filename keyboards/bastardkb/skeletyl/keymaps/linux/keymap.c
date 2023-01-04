@@ -192,7 +192,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       SFT_T(KC_Z), KC_X, KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,LALT_T(KC_DOT), SFT_T(KC_SLSH), 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                         LT(SYMB,KC_SPC), OSM(MOD_LCTL), XXXXXXX,   XXXXXXX, OSM(MOD_RCTL),LT(SYMB,KC_SPC)
+                         LT(SYMB,KC_TAB), OSM(MOD_LCTL), XXXXXXX,   XXXXXXX, OSM(MOD_RCTL),LT(SYMB,KC_SPC)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -211,7 +211,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [SYMB2] = LAYOUT_split_3x5_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CIRC, ALT_TAB, KC_TAB, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CIRC, ALT_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
