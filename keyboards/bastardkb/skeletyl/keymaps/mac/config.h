@@ -21,7 +21,6 @@
 #pragma once
 #define VENDOR_ID 0xA8F8
 #define PRODUCT_ID 0x1830
-#define MANUFACTURER Bastard Keyboards
 
 #define RGBLIGHT_LIMIT_VAL 180
 
@@ -47,6 +46,7 @@
 
 #define MK_KINETIC_SPEED
 #define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 8
+#define MOUSEKEY_BASE_SPEED 7500
 //#define MOUSEKEY_DELAY      3
 //#define MOUSEKEY_MAX_SPEED 10
 //#define MOUSEKEY_TIME_TO_MAX 60
