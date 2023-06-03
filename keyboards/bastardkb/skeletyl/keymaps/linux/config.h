@@ -37,8 +37,8 @@
 
 // https://github.com/qmk/qmk_firmware/blob/master/docs/getting_started_introduction.md
 #undef MASTER_RIGHT
-#define MASTER_LEFT
-//#define MASTER_RIGHT
+//#define MASTER_LEFT
+#define MASTER_RIGHT
 
 #define COMBO_COUNT 1
 #define COMBO_TERM 100
@@ -46,7 +46,9 @@
 #define MK_KINETIC_SPEED
 #define MOUSEKEY_INTERVAL 5
 //#define MOUSEKEY_INITIAL_SPEED 50
+#define MOUSEKEY_TIME_TO_MAX 30
 #define MOUSEKEY_BASE_SPEED 10000
+//#define MOUSEKEY_MAX_SPEED 15
 #define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 8
 
 //#define MOUSEKEY_INERTIA
