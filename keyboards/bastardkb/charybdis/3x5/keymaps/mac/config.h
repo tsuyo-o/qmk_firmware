@@ -13,5 +13,4 @@
 // https://github.com/qmk/qmk_firmware/blob/master/docs/getting_started_introduction.md
 #undef MASTER_RIGHT
 //#define MASTER_LEFT
-//#define MASTER_RIGHT
 #define EE_HANDS
