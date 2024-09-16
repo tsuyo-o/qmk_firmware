@@ -135,25 +135,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       // Let QMK process the KC_J keycode as usual outside of ctrl key
       return true;
     }
-  case KC_COMM:
-    {
-      if (record->event.pressed) {
-        if (get_oneshot_mods() & MOD_MASK_GUI) {
-          del_oneshot_mods(MOD_MASK_GUI);
-          layer_on(MOUSE);
-          return false;
-        }
-        // for general mods
-        else if (mod_state & MOD_MASK_GUI) {
-          del_mods(MOD_MASK_GUI);
-          layer_on(MOUSE);
-          set_mods(mod_state);
-          return false;
-        }
-      } // Let QMK process the KC_COMM keycode as usual outside of ctrl key
-      return true;
-    }
-
   }
   return true;
 };
