@@ -22,12 +22,30 @@ enum charybdis_keymap_layers {
   SYMB = 1,
   SYMB2 = 2,
   MOUSE = 3,
+  MOUSE2= 4,
 };
 
+// auto mouse
 void pointing_device_init_user(void) {
-  set_auto_mouse_layer(MOUSE);
+  set_auto_mouse_layer(MOUSE2);
   set_auto_mouse_enable(true);
 }
+
+// https://docs.qmk.fm/features/pointing_device#advanced-control-examples
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
+        // case MOUSE2:
+        case MOUSE:
+            state = remove_auto_mouse_layer(state, false);
+            set_auto_mouse_enable(false);
+            break;
+        default:
+            set_auto_mouse_enable(true);
+            break;
+    }
+    return state;
+}
+
 
 // Initialize variable holding the binary
 // representation of active modifiers.
@@ -135,6 +153,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       // Let QMK process the KC_J keycode as usual outside of ctrl key
       return true;
     }
+  case KC_COMM:
+    {
+      if (record->event.pressed) {
+        if (get_oneshot_mods() & MOD_MASK_GUI) {
+          del_oneshot_mods(MOD_MASK_GUI);
+          layer_on(MOUSE);
+          return false;
+        }
+        // for general mods
+        else if (mod_state & MOD_MASK_GUI) {
+          del_mods(MOD_MASK_GUI);
+          layer_on(MOUSE);
+          set_mods(mod_state);
+          return false;
+        }
+      } // Let QMK process the KC_COMM keycode as usual outside of ctrl key
+      return true;
+    }
+
   }
   return true;
 };
@@ -163,7 +200,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,      KC_9,     KC_0,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_MINS, KC_CIRC, KC_GRV,    KC_TILD, KC_PIPE
+                                          KC_CIRC, KC_MINS, KC_GRV,    KC_TILD, KC_PIPE
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -181,14 +218,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [MOUSE] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_WH_U, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_U, XXXXXXX,                      XXXXXXX, KC_WH_U, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_BTN4, KC_BTN1, KC_BTN2, KC_BTN5, TO(BASE),
+      XXXXXXX, XXXXXXX, DPI_MOD, KC_BTN1, KC_BTN2,                      KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5, TO(BASE),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_BTN2,KC_BTN1, KC_WH_U, KC_WH_D,KC_BTN1
                                       //`--------------------------'  `--------------------------'
-  )
+                   ),
+
+  [MOUSE2] = LAYOUT(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_U, XXXXXXX,                      XXXXXXX, KC_WH_U, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, DPI_MOD, KC_BTN1, KC_BTN2,                      KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5, TO(BASE),
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_BTN2,KC_BTN1, KC_WH_U, KC_WH_D,KC_BTN1
+                                      //`--------------------------'  `--------------------------'
+                   ),
+
 };
+
+
 // clang-format on

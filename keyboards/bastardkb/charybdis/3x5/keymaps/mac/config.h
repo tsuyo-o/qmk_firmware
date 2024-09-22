@@ -1,4 +1,5 @@
 //#define NO_CHARYBDIS_KEYCODES
+//#define CHARYBDIS_MINIMUM_DEFAULT_DPI 800
 
 // https://docs.qmk.fm/features/pointing_device
 // Enable auto mouse
@@ -11,8 +12,8 @@
 #define AUTO_MOUSE_TIME	650
 
 // https://github.com/qmk/qmk_firmware/blob/master/docs/getting_started_introduction.md
-#undef MASTER_RIGHT
-#define MASTER_LEFT
+//#undef MASTER_RIGHT
+//#define MASTER_LEFT
 //#define EE_HANDS
 
 // default is 200
