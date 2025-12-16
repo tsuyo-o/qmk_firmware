@@ -218,25 +218,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [MOUSE] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_U, XXXXXXX,                      XXXXXXX, KC_WH_U, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      XXXXXXX, MS_WHLU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_MOD, KC_BTN1, KC_BTN2,                      KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5, TO(BASE),
+      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                      MS_BTN4, MS_WHLD, MS_WHLU, MS_BTN5, TO(BASE),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLD, XXXXXXX,                      MS_WHLL, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BTN2,KC_BTN1, KC_WH_U, KC_WH_D,KC_BTN1
+                                          MS_BTN2,MS_BTN1, MS_WHLU, MS_WHLD,MS_BTN1
                                       //`--------------------------'  `--------------------------'
                    ),
 
   [MOUSE2] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_U, XXXXXXX,                      XXXXXXX, KC_WH_U, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      XXXXXXX, MS_WHLU, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_MOD, KC_BTN1, KC_BTN2,                      KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5, TO(BASE),
+      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                      MS_BTN4, MS_WHLD, MS_WHLU, MS_BTN5, TO(BASE),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_RMOD, KC_WH_D, XXXXXXX,                      KC_WH_L, KC_WH_D, KC_WH_R, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLD, XXXXXXX,                      MS_WHLL, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_BTN2,KC_BTN1, KC_WH_U, KC_WH_D,KC_BTN1
+                                          MS_BTN2,MS_BTN1, MS_WHLU, MS_WHLD,MS_BTN1
                                       //`--------------------------'  `--------------------------'
                    ),
 
