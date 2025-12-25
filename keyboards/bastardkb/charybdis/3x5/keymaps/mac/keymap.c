@@ -218,9 +218,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [MOUSE] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      XXXXXXX, MS_WHLU, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      MS_BTN1, MS_WHLU, MS_BTN2, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                      MS_BTN4, MS_WHLD, MS_WHLU, MS_BTN5, TO(BASE),
+      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                       MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR, TO(BASE),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLD, XXXXXXX,                      MS_WHLL, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -230,9 +230,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [MOUSE2] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      XXXXXXX, MS_WHLU, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLU, XXXXXXX,                      MS_BTN1, MS_WHLU, MS_BTN2, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                      MS_BTN4, MS_WHLD, MS_WHLU, MS_BTN5, TO(BASE),
+      XXXXXXX, XXXXXXX, DPI_MOD, MS_BTN1, MS_BTN2,                       MS_WHLL, MS_WHLD, MS_WHLU, MS_WHLR, TO(BASE),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, DPI_RMOD, MS_WHLD, XXXXXXX,                      MS_WHLL, MS_WHLD, MS_WHLR, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|

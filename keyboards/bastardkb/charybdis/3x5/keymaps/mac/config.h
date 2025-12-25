@@ -22,3 +22,10 @@
 #define TAPPING_TERM 400
 // keep Hold state if the time of next key-typing < TAPPING_TERM.
 #define PERMISSIVE_HOLD
+
+//// mouse keys
+//#define MK_KINETIC_SPEED
+//#define MOUSEKEY_INTERVAL 5
+//#define MOUSEKEY_BASE_SPEED 10000
+//#define MOUSEKEY_MOVE_DELTA 32
+//#define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 8
